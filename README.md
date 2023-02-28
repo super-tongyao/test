@@ -12,27 +12,21 @@ Wall是一款快速资源分享应用程序。基于Vue3 + Spring Boot开发的�
 
 
 
-演示Demo：https://wall.demo.ityao.cn
+演示Demo：[https://wall.demo.ityao.cn](https://wall.demo.ityao.cn)
 
+Demo后台：[https://wall.demo.ityao.cn/login](https://wall.demo.ityao.cn/login)，账号密码：admin/123456
 
-
-登录：https://wall.demo.ityao.cn/login，账号密码：admin/123456
-
-
-
-作者的Wall：https://wall.ityao.cn
+作者的Wall：[https://wall.ityao.cn](https://wall.ityao.cn)
 
 
 
 如果这个项目让你有所收获，记得 Star 关注哦，这对我是非常不错的鼓励与支持。
 
-
-
 ## 开发者名单
 
 Wall还有很多不足之处，比如Wall暂不支持ios系统调用相册上传图片等。
 
-或许你可以加入Wall团队，我们一起贡献代码。[申请加入](http://baidu.com)
+或许你可以加入Wall团队，我们一起贡献代码。[申请加入](#参与贡献)
 
 
 
@@ -54,7 +48,11 @@ Wall还有很多不足之处，比如Wall暂不支持ios系统调用相册上传
 #### 2023－02－28（v1.0）
 > 1、版本（v1.0）上线。
 
+## 参与贡献
 
+发送邮箱：super_tongyao@163.com，内容主题：关于Wall开源参与贡献
+
+让我们一起让Wall变的更好。
 
 ## 免责声明
 
