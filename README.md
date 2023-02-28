@@ -38,13 +38,89 @@ Wall还有很多不足之处，比如Wall暂不支持ios系统调用相册上传
 | 成员1                                                        | 成员1   | 成员1                            |
 | 成员2                                                        | 成员2   | 成员2                            |
 
-## 安装及说明
+## 安装教程
+
+### 源代码地址
 
 > Vue 源码请查看分支：[vue分支](https://github.com/super-tongyao/wall/tree/vue)
 
 > Spring Boot 源码请查看分支：[service分支](https://github.com/super-tongyao/wall/tree/service)
 
+### 前端安装
+
+前端安装建议推荐使用nginx代理。在此使用nginx做文章配置。
+
+1、把wall前端文件放入```nginx.conf```配置文件中，并新增配置。
+
+```
+server {
+	listen       80;
+	server_name  你的网站域名或公网IP;
+	
+	underscores_in_headers on;
+
+	location / {
+		# 映射你nginx/html目录下的wall文件
+		root html/wall;
+		try_files $uri $uri/ /index.html;
+	}
+	
+	# 后端服务地址
+	location /api{
+		rewrite  ^/api/(.*)$ /$1 break;
+		proxy_set_header Host $host;
+		proxy_set_header X-Real-IP $remote_addr;
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		
+		# 转发你Wall的后台地址
+		proxy_pass   http://localhost:9999;
+	}
+	
+	error_page   500 502 503 504  /50x.html;
+	location = /50x.html {
+		root   html;
+	}
+}
+```
+
+至此，重启nginx不报错，前端部署完成。
+
+### 后端安装
+
+修改config/application.yml配置文件，并修改你本地的MySQL数据库连接端口及账号密码。
+
+```
+# project prot
+server:
+  port: 9999
+
+# database config
+mysql:
+  database: wall
+  port: 3306
+  ip: 127.0.0.1
+  username: root
+  password: root
+```
+
+后端支持2中环境下快捷启动。
+
+- Windows下双击```startup.bat```文件启动。
+
+- Linux下执行```startup.sh```文件启动，请先获取执行权限。
+
+也可以输入命令行启动。
+
+```
+java -jar bin/wall.jar -Dspring.config.location="config/application.yml"
+```
+
+至此，访问```http://你的网站域名或公网IP:80```正常显示页面及操作数据，完成安装。
+
+如有问题，请提交Issues。
+
 ## 更新日志
+
 #### 2023－02－28（v1.0）
 > 1、版本（v1.0）上线。
 
