@@ -34,7 +34,7 @@ Wall还有很多不足之处，比如Wall暂不支持ios系统调用相册上传
 
 | 头像                                                         | 名称    | Github                           |
 | ------------------------------------------------------------ | ------- | -------------------------------- |
-|<img src="https://img-blog.csdnimg.cn/7da53370f8f8449bbc9025cf702e730a.jpeg" style="border-radius:50%;border:1px #eee solid" width="100">| Tongyao | https://github.com/super-tongyao |
+|| Tongyao | https://github.com/super-tongyao |
 | 成员1                                                        | 成员1   | 成员1                            |
 | 成员2                                                        | 成员2   | 成员2                            |
 
